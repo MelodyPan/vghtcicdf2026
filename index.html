@@ -214,6 +214,11 @@
             font-size: 0.8rem;
         }
 
+        .topic-pending {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
         /* List Table style for June 5 Orientation */
         .agenda-table {
             width: 100%;
@@ -310,6 +315,21 @@
             line-height: 1.35;
         }
 
+        .highlight-media {
+            margin: 0 0 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #dbe7ee;
+            background: #f8fafc;
+        }
+
+        .highlight-media img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
         .highlight-location {
             display: inline-block;
             background: #edf2f7;
@@ -324,6 +344,15 @@
             color: #334155;
             font-size: 0.95rem;
             line-height: 1.75;
+            text-align: justify;
+            text-justify: inter-word;
+            hyphens: auto;
+            letter-spacing: 0.1px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card p:last-child {
+            margin-bottom: 0;
         }
 
         /* Location map section */
@@ -479,6 +508,22 @@
             font-weight: 700;
         }
 
+        .wifi-illustration {
+            margin: 0 0 14px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0deca;
+            background: #fffdf2;
+        }
+
+        .wifi-illustration img {
+            display: block;
+            width: 100%;
+            height: 280px;
+            object-fit: contain;
+            background: #fffdf2;
+        }
+
         .wifi-steps-box {
             background: #f6f5e6;
             border: 1px solid #e0deca;
@@ -487,7 +532,9 @@
         }
 
         .wifi-steps-box ol {
-            margin-left: 30px;
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
             color: #8a4b00;
             font-size: 1rem;
             font-weight: 500;
@@ -538,6 +585,49 @@
             margin-bottom: 2px;
         }
 
+        /* Satisfaction survey section */
+        .survey-box {
+            border: 1px solid #dbe7ee;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            background: #f8fcfc;
+            padding: 22px 24px;
+        }
+
+        .survey-box p {
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .survey-actions {
+            margin-top: 14px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .survey-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .survey-btn:hover {
+            background: #006f6b;
+        }
+
+        .survey-note {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
         /* Footer layout */
         .footer-info {
             display: grid;
@@ -556,6 +646,59 @@
         .footer-section h2 {
             color: #63e2de;
             border-bottom-color: #63e2de;
+        }
+
+        .social-qr-section {
+            margin-top: 22px;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            color: #1f2937;
+        }
+
+        .social-qr-title {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .social-qr-subtitle {
+            text-align: center;
+            color: #0f766e;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+        }
+
+        .social-qr-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .social-qr-item {
+            text-align: center;
+        }
+
+        .social-qr-item h4 {
+            font-size: 1.05rem;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .social-qr-item img {
+            width: 170px;
+            height: 170px;
+            object-fit: contain;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            background: #ffffff;
+        }
+
+        .social-qr-item p {
+            margin-top: 8px;
+            color: #111827;
+            font-size: 0.95rem;
         }
 
         /* Responsive UI adjustments */
@@ -588,18 +731,25 @@
             .footer-info { grid-template-columns: 1fr; gap: 15px; }
             .highlight-grid { grid-template-columns: 1fr; gap: 14px; }
             .highlight-card { padding: 18px 16px; }
+            .highlight-media img { height: 170px; }
             .location-map-wrap { padding: 6px; }
             .location-map-grid { grid-template-columns: 1fr; }
             .location-map-frame { height: 420px; }
             .location-static-map { height: 420px; }
             .wifi-card { padding: 16px; }
+            .wifi-illustration { margin-bottom: 12px; }
+            .wifi-illustration img { height: 220px; }
             #wifi h2 { font-size: 1.3rem; }
             .wifi-card h3 { font-size: 1.08rem; }
-            .wifi-steps-box ol { margin-left: 22px; font-size: 1.02rem; }
+            .wifi-steps-box ol { margin-left: 0; padding-left: 0; font-size: 1.02rem; }
             .wifi-credentials { margin-left: 20px; font-size: 1rem; }
             .wifi-note { font-size: 0.95rem; }
             .security-reminder h3 { font-size: 1.08rem; }
             .security-reminder li { font-size: 1rem; }
+            .survey-box { padding: 16px; }
+            .survey-box p { font-size: 0.96rem; }
+            .social-qr-grid { grid-template-columns: 1fr; }
+            .social-qr-item img { width: 150px; height: 150px; }
             
             .agenda-table, .agenda-table thead, .agenda-table tbody, .agenda-table th, .agenda-table td, .agenda-table tr { 
                 display: block; 
@@ -624,16 +774,16 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <a href="https://www.vghtc.gov.tw/en/" target="_blank" rel="noopener noreferrer">
+                <a href="#banner" aria-label="Back to top">
                     <img src="assets/title.png" alt="TCVGH International Program">
                 </a>
             </div>
             <nav>
                 <a href="#about">About</a>
                 <a href="#schedule">Full Schedule</a>
-                <a href="#orientation">Orientation Day</a>
                 <a href="#highlight">Smart Highlights</a>
                 <a href="#network">Network</a>
+                <a href="#survey">Survey</a>
                 <a href="#location">Location</a>
             </nav>
         </div>
@@ -657,7 +807,7 @@
         </section>
 
         <section id="schedule">
-            <h2>Full Program Schedule (June 2026)</h2>
+            <h2>Full Schedule (June 2026)</h2>
             <p style="font-size: 0.9rem; color: var(--gray-color); margin-bottom: 15px;">
                 * Note: The program runs weekly from Monday to Friday. June 19 is a national holiday (Dragon Boat Festival).
             </p>
@@ -698,7 +848,7 @@
                             <div class="session-box special">
                                 <div class="session-title">Full Day Orientation</div>
                                 Comprehensive Smart Hospital & Lab Site Briefings<br>
-                                <a href="#orientation" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">(See Detailed Schedule Below)</a>
+                                <a href="#orientation-detail" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">(See Detailed Schedule Below)</a>
                             </div>
                         </td>
                     </tr>
@@ -713,24 +863,19 @@
                     <tr>
                         <td>
                             <div class="session-box lecture">
-                                <div class="session-title">09:00-10:30</div>
-                                TCVGH Medical Image AI & Emergency Face Recognition for Chest Pain Patients<br>
-                                <span class="session-speaker">Prof. Chao-Tung Yang (Tunghai University)</span>
-                            </div>
-                            <div class="session-box lecture">
-                                <div class="session-title">10:30-12:00</div>
-                                Deep01 Medical Image AI Product Introduction<br>
-                                <span class="session-speaker">Mr. Jiun-Lin Li (Deep01 VP)</span>
+                                <div class="session-title">09:00-12:00</div>
+                                Emergency Face Recognition for Chest Pain Patients and TCVGH Medical Imaging AI<br>
+                                <span class="session-speaker">Prof. Chao-Tung Yang (Lifetime Distinguished Professor, Department of Computer Science, Tunghai University)</span>
                             </div>
                             <div class="session-box lecture">
                                 <div class="session-title">13:30-15:00</div>
-                                Topic to be Confirmed<br>
+                                <span class="topic-pending">Topic to be Confirmed</span><br>
                                 <span class="session-speaker">-</span>
                             </div>
                             <div class="session-box lecture">
                                 <div class="session-title">15:00-16:30</div>
-                                Smart Osteoporosis Screening (SmartBone)<br>
-                                <span class="session-speaker">Dr. Kun-Huei Chen (Director of Orthopedics)</span>
+                                VeriOsteo (TFDA) SmartBone<br>
+                                <span class="session-speaker">Prof. Kun-Huei Chen (CEO, Smart Medical Committee)</span>
                             </div>
                         </td>
                         <td>
@@ -742,67 +887,64 @@
                             <div class="session-box lecture">
                                 <div class="session-title">10:30-12:00</div>
                                 Introduction of AI Application in ECG Waveforms<br>
-                                <span class="session-speaker">Dr. Tzu-Hung Hsiao (Medical Research)</span>
+                                <span class="session-speaker">Dr. Tzu-Hung Hsiao (Department of Medical Research)</span>
                             </div>
                             <div class="session-box lecture">
-                                <div class="session-title">13:30-15:00</div>
-                                From Data to Decision: AI-Driven Smart Healthcare<br>
-                                <span class="session-speaker">Prof. Hung-Hing Lu (KMUH Vice Superintendent / AI Biomedical Research Academy)</span>
-                            </div>
-                            <div class="session-box lecture">
-                                <div class="session-title">15:00-16:30</div>
-                                Clinical Applications of AI in Medical Imaging: Local Advanced Rectal Cancer via Deep Learning<br>
-                                <span class="session-speaker">Dr. Jiun-Yu Lin (Colorectal Surgery)</span>
+                                <div class="session-title">13:30-16:30</div>
+                                From Data to Decisions: AI-Driven Healthcare<br>
+                                <span class="session-speaker">Prof. Henry Horng-Shing Lu (Deputy Superintendent, Kaohsiung Medical University Hospital; Director, Institute of Artificial Intelligence in Medicine)</span>
                             </div>
                         </td>
                         <td>
                             <div class="session-box lecture">
                                 <div class="session-title">09:00-10:30</div>
-                                A Deep Learning Framework Based on Large-Scale Cardiac Ultrasound Databases to Improve Diagnostic Accuracy<br>
-                                <span class="session-speaker">Dr. Wei-Wen Lin (Director of Cardiology)</span>
+                                Cardiac Ultrasound AI Interpretation<br>
+                                <span class="session-speaker">Dr. Lin Wei-Wen (Director, Cardiovascular Center)</span>
                             </div>
                             <div class="session-box lecture">
                                 <div class="session-title">10:30-12:00</div>
-                                Speaker & Topic to be Announced<br>
-                                <span class="session-speaker">-</span>
+                                <span class="topic-pending">Topic to be Confirmed</span><br>
+                                <span class="session-speaker">Dr. Yu-Ching Hsiao (Senior Manager, Acer Smart Medical)</span>
                             </div>
                             <div class="session-box lecture">
-                                <div class="session-title">13:30-15:00</div>
-                                SaMD Software Product Development, Deployment, Clinical Trials, and US FDA 510(k) Clearance Experience Sharing<br>
-                                <span class="session-speaker">Prof. Yu-Te Wu (NYCU)</span>
+                                <div class="session-title">13:30-16:30</div>
+                                Software as a Medical Device: Development, Deployment, Clinical Validation and Journey to FDA 510(k)<br>
+                                <span class="session-speaker">Prof. Yu-Te Wu (Institute of Biomedical Photonics, National Yang Ming Chiao Tung University)</span>
+                            </div>
+                        </td>
+                        <td>
+                            
+                            <div class="session-box lecture">
+                                <div class="session-title">09:00-10:30</div>
+                                Clinical Applications of AI in Medical Imaging: Utilizing Deep Learning to Detect Locally Advanced Rectal Cancer<br>
+                                <span class="session-speaker">Dr. Chun-Yu Lin (Division of Colorectal Surgery, Department of Surgery)</span>
                             </div>
                             <div class="session-box lecture">
-                                <div class="session-title">15:00-16:30</div>
+                                <div class="session-title">10:30-12:00</div>
                                 AI-Assisted Diagnosis and Treatment for Lymphedema<br>
-                                <span class="session-speaker">Dr. Chih-Sheng Lai (Plastic & Reconstructive Surgery)</span>
+                                <span class="session-speaker">Dr. Chih-Sheng Lai (Division of Reconstructive Surgery, Department of Surgery)</span>
+                            </div>
+                            <div class="session-box lecture">
+                                <div class="session-title">13:30-16:30</div>
+                                Foundations of Deep Learning and Practical Medical Imaging Applications<br>
+                                <span class="session-speaker">Prof. Chun-Rong Huang (Department of Computer Science and Information Engineering, National Yang Ming Chiao Tung University)</span>
                             </div>
                         </td>
                         <td>
                             <div class="session-box lecture">
                                 <div class="session-title">09:00-10:30</div>
                                 AR & VR Applications in Surgical Operations<br>
-                                <span class="session-speaker">Dr. Chien-Yi Li (Director of Urology)</span>
+                                <span class="session-speaker">Dr. Chien-Yi Lee (Director, Division of Urology)</span>
                             </div>
                             <div class="session-box lecture">
                                 <div class="session-title">10:30-12:00</div>
-                                Pediatric Renal Ultrasound Image Interpretation<br>
-                                <span class="session-speaker">Dr. Ling-Sai Fu (Director of Pediatric Nephrology)</span>
+                                Pediatric Renal Ultrasound Interpretation<br>
+                                <span class="session-speaker">Dr. Ling-Hsien Fu (Chief, Division of Pediatric Immunology and Nephrology, Children's Medical Center)</span>
                             </div>
                             <div class="session-box lecture">
-                                <div class="session-title">13:30-15:00</div>
-                                Foundations of Deep Learning and Practical Applications in Medical Imaging Analysis<br>
-                                <span class="session-speaker">Prof. Churn-Jung Liau (NYCU Computer Science)</span>
-                            </div>
-                            <div class="session-box lecture">
-                                <div class="session-title">15:00-16:30</div>
-                                Topic to be Announced<br>
-                                <span class="session-speaker">Prof. Rui-Feng Chang (National Taiwan University)</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="session-box special">
-                                <div class="session-title">Full Day (09:00-16:30)</div>
-                                Special Clinical Case Tracking & Department Group Discussions
+                                <div class="session-title">13:30-16:30</div>
+                                <span class="topic-pending">Topic to be Confirmed</span><br>
+                                <span class="session-speaker">Prof. Ruey-Feng Chang (Department of Computer Science and Information Engineering, National Taiwan University)</span>
                             </div>
                         </td>
                     </tr>
@@ -820,7 +962,7 @@
                             Daily Schedule: Morning Session 09:00~12:00 | Afternoon Session 13:30~16:30
                         </td>
                         <td style="background: #fff5f5; text-align: center; color: #e53e3e; vertical-align: middle; font-weight: bold;">
-                            Dragon Boat Festival<br>(National Holiday - Off Day)
+                            Dragon Boat Festival<br>(National Holiday)
                         </td>
                     </tr>
 
@@ -853,7 +995,7 @@
         </section>
 
         <section id="orientation">
-            <h2>Detailed Orientation Schedule (Friday, June 5)</h2>
+            <h2 id="orientation-detail">Detailed Orientation Schedule (Friday, June 5)</h2>
             <table class="agenda-table">
                 <thead>
                     <tr>
@@ -978,49 +1120,59 @@
             <h2>Smart Medical Highlights</h2>
             <div class="highlight-grid">
                 <article class="highlight-card">
-                    <h3>1. Tube Preparation System & Fully Automated Laboratory</h3>
-                    <div class="highlight-location">Location: 2F Blood Drawing Area (Rear Outpatient Building) / 3F Department of Laboratory Medicine</div>
+                    <h3>1. Tube Preparation System & Smart Automated Laboratory</h3>
+                    <figure class="highlight-media">
+                        <img src="assets/Smart Automated Laboratory.PNG" alt="Smart Automated Laboratory">
+                    </figure>
+                    <div class="highlight-location">Venue：Blood Drawing Area, 2F, Rear Outpatient Building; Laboratory Section, 3F, Rear Outpatient Building</div>
                     <p>
-                        This site features one of Taiwan's largest and most highly integrated smart laboratories.
-                        Equipped with the latest CARS (Computer-Assisted Robotic System), it uses fully electric,
-                        touchless specimen transportation to achieve low-noise and low-carbon safety standards.
-                        The system can process more than 10,000 specimens per day and reduces infectious medical
-                        waste by approximately 50%. With real-time data from the Smart Monitoring Center, clinicians
-                        can obtain reports faster and make timelier treatment decisions.
+                        Fully Automated Smart Laboratory. Taichung Veterans General Hospital proudly introduces
+                        Taiwan's largest and most integrated Fully Automated Smart Laboratory. Equipped with the
+                        world's latest CARS (Computer-Aided Robotic System) - a fully electric, zero-contact specimen
+                        transport system - the lab ensures low noise, zero emissions, and enhanced safety in an
+                        eco-friendly environment. This smart system integrates biochemical, immunological,
+                        hematological, and coagulation testing, processing over 10,000 specimens daily with
+                        outstanding precision and efficiency. Automated processes and tube consolidation help reduce
+                        infectious waste by 50%, advancing low-carbon and eco-friendly healthcare goals.
+                    </p>
+                    <p>
+                        Through real-time data from our Smart Monitoring Center, clinicians gain faster insights for
+                        medical decisions and infection control - setting a new benchmark in smart, safe, and
+                        sustainable healthcare.
                     </p>
                 </article>
 
                 <article class="highlight-card">
                     <h3>2. Smart Ward - Ward 34</h3>
-                    <div class="highlight-location">Location: 4F, Emergency Building</div>
+                    <figure class="highlight-media">
+                        <img src="assets/Smart Ward.PNG" alt="Smart Ward">
+                    </figure>
+                    <div class="highlight-location">Venue：4F, Emergency Building</div>
                     <p>
-                        Through a structured training framework and multidisciplinary teamwork, the Smart Ward delivers
-                        personalized nursing care. It integrates clinical nursing data, smart whiteboards, bedside
-                        interactive systems, and mobile nursing carts to support efficient real-time collaboration
-                        across teams. This model combines advanced technology with compassionate, patient-centered care
-                        to improve both safety and service quality.
+                        Taichung Veterans General Hospital delivers holistic nursing care through a structured training system and multidisciplinary teams. Digital tools like bedside systems, smart whiteboards, and mobile nursing carts support efficient, real-time care. Specialized nurses serve in ICUs and ORs, while ongoing training and quality committees ensure professional growth. Smart wards combine compassionate care with advanced technology to enhance patient safety and service quality.
                     </p>
                 </article>
 
                 <article class="highlight-card">
                     <h3>3. Telehealth Center</h3>
-                    <div class="highlight-location">Location: 2F, Emergency Building</div>
+                    <figure class="highlight-media">
+                        <img src="assets/Telehealth Center.PNG" alt="Telehealth Center">
+                    </figure>
+                    <div class="highlight-location">Venue：2F, Emergency Building</div>
                     <p>
-                        The center is one of Taiwan's largest telehealth hubs, integrating remote nursing resources,
-                        real-time teleconsultation support, post-discharge home follow-up, and smart case management.
-                        It helps improve continuity and quality of care between urban and rural regions, while also
-                        promoting international healthcare collaboration and technology exchange.
+                        Taichung Veterans General Hospital established the largest Telehealth Center in Taiwan to integrate telecare resources, support real-time remote care, and enhance home-based and post-discharge services—improving medical quality and promoting international healthcare.
                     </p>
                 </article>
 
                 <article class="highlight-card">
                     <h3>4. Virtual Reality (VR) Clinical Activities</h3>
-                    <div class="highlight-location">Location: VR Rooms, 2F & 4F, Education Building</div>
+                    <figure class="highlight-media">
+                        <img src="assets/Virtual Reality.PNG" alt="Virtual Reality">
+                    </figure>
+                    <div class="highlight-location">Venue：VR Room , 2F & 4F, Education Building</div>
                     <p>
-                        As a leading teaching hospital, TCVGH provides high-specification OSCE examination areas,
-                        a simulation medicine center, and advanced VR training tools. These immersive modules support
-                        clinical doctors and healthcare staff in practicing microsurgery techniques, emergency response
-                        workflows, and complex clinical scenarios, accelerating practical skill development.
+                        We are a leading teaching hospital in Taiwan, committed to high-quality medical education. Our training facilities include OSCE halls, simulation centers, and VR-based learning tools.
+Focusing on patient-centered and evidence-based teaching, we provide continuous training for physicians and healthcare staff. Recognized nationally and internationally, we serve as a key training and teacher education hub.
                     </p>
                 </article>
             </div>
@@ -1055,15 +1207,18 @@
         </section>
 
         <section id="network">
-            <h2>Guest Network & Security Information</h2>
+            <h2>Wifi Instructions</h2>
 
             <div class="wifi-card">
                 <h3>📶 Free Wi-Fi Connection Steps:</h3>
+                <div class="wifi-illustration">
+                    <img src="assets/wifi.png" alt="Wi-Fi connection guide" loading="lazy">
+                </div>
                 <div class="wifi-steps-box">
                     <ol>
-                        <li>Open Wi-Fi settings on your mobile device and connect to SSID: <strong>GUEST</strong></li>
+                        <li>Step1 : Open Wi-Fi settings on your mobile device and connect to SSID: <strong>GUEST</strong></li>
                         <li>
-                            A login page will open automatically in your browser (if not, open any webpage first), then enter:
+                            Step2 : A login page will open automatically in your browser (if not, open any webpage first), then enter:
                             <ul class="wifi-credentials">
                                 <li>Account: <strong>VGHTC_ICDF</strong></li>
                                 <li>Password: <strong>KRgKZbn3</strong></li>
@@ -1075,12 +1230,27 @@
             </div>
 
             <div class="security-reminder">
-                <h3>⚠ Security Reminder</h3>
+                <h3>⚠ Important Security Reminder</h3>
                 <ul>
-                    <li>This wireless network provides basic Internet access only. For cybersecurity reasons, it cannot connect to the hospital's internal HIS network.</li>
-                    <li>When taking photos in hospital areas, please avoid capturing patient faces, medical records, or any personal private information.</li>
-                    <li>To maintain medical order and patient privacy, please follow designated visiting routes and do not enter non-public clinical restricted areas.</li>
+                    <li>1. This network is for guest access only.</li>
+                    <li>2. Access is limited to internet services only. Internal hospital systems are not accessible.</li>
+                    <li>3. Please ensure that no patient faces or personal information appear in photos.</li>
+                    <li>4. Please stay within the designated tour route and avoid entering restricted areas.</li>
+                    <li>5. Internet Usage period: June 4 - June 23, 2026.</li>
                 </ul>
+            </div>
+        </section>
+
+        <section id="survey">
+            <h2>Satisfaction Survey</h2>
+            <div class="survey-box">
+                <p>
+                    Your feedback is very important to us. Please complete the participant satisfaction questionnaire
+                    before the end of the program. Thank you for helping us improve future training activities.
+                </p>
+                <div class="survey-actions">
+                    <a class="survey-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSevIGHH3cIbMCzfZ6SPy0xuoWkJQQZWweUUPJuQkSxYyxSUDQ/viewform" target="_blank" rel="noopener noreferrer">Fill Out the Survey</a>
+                </div>
             </div>
         </section>
 
@@ -1098,6 +1268,22 @@
                     <p style="font-style: italic; opacity: 0.9; font-size: 1rem;">
                         Compassion, Quality, Innovation, Accountability
                     </p>
+                </div>
+            </div>
+
+            <div class="social-qr-section">
+                <p class="social-qr-subtitle">Stay connected with us for the latest news and updates.</p>
+                <div class="social-qr-grid">
+                    <div class="social-qr-item">
+                        <h4>TCVGH Official Website</h4>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.vghtc.gov.tw%2FHome%2FIndexEng" alt="QR code for TCVGH official website" loading="lazy">
+                        <p>Scan to Visit Website</p>
+                    </div>
+                    <div class="social-qr-item">
+                        <h4>TCVGH Facebook Page</h4>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fwww.facebook.com%2Fvghtc" alt="QR code for TCVGH Facebook page" loading="lazy">
+                        <p>Scan to Follow Facebook</p>
+                    </div>
                 </div>
             </div>
         </div>
