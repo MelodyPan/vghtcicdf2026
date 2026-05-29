@@ -153,6 +153,14 @@
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
         }
 
+        .meta-inline-logo {
+            height: 20px;
+            width: auto;
+            vertical-align: middle;
+            margin-left: 6px;
+            border-radius: 4px;
+        }
+
         /* Calendar Table View */
         .calendar-table {
             width: 100%;
@@ -241,6 +249,11 @@
 
         .agenda-table tr:nth-child(even) {
             background-color: #fcfdfe;
+        }
+
+        .agenda-table tr.lunch-row,
+        .agenda-table tr.lunch-row td {
+            background-color: #ffe4ef;
         }
 
         .venue-tag {
@@ -796,8 +809,8 @@
             <p>Empowering Global Healthcare Through Smart Medical Technology Collaboration</p>
             <div class="meta-info">
                 <strong>Duration:</strong> June 4 – June 23, 2026 &nbsp;&nbsp;&nbsp;&nbsp; 
-                <strong>Organizer:</strong> Taichung Veterans General Hospital (TCVGH) &nbsp;&nbsp;&nbsp;&nbsp; 
-                <strong>Advisor:</strong> TAIWAN ICDF
+                <strong>Organizer:</strong> Taichung Veterans General Hospital (TCVGH)<img class="meta-inline-logo" src="assets/VGHTC.PNG" alt="VGHTC logo"> &nbsp;&nbsp;&nbsp;&nbsp; 
+                <strong>Advisor:</strong> TAIWAN ICDF<img class="meta-inline-logo" src="assets/ICDF.PNG" alt="TAIWAN ICDF logo">
             </div>
         </div>
 
@@ -834,20 +847,15 @@
                         <td style="color: #cbd5e0; font-style: italic;">No Session</td>
                         <td style="color: #cbd5e0; font-style: italic;">No Session</td>
                         <td style="color: #cbd5e0; font-style: italic;">No Session</td>
+                        <td style="color: #cbd5e0; font-style: italic;">No Session</td>
                         <td>
                             <div class="session-box special">
-                                <div class="session-title">AM (09:30-12:30)</div>
-                                Opening Ceremony, Keynote Speeches & Unit Visits
+                                <div class="session-title">AM (09:30-11:00)</div>
+                                Opening Ceremony, Keynote Speeches
                             </div>
                             <div class="session-box special">
-                                <div class="session-title">PM (13:30-16:30)</div>
-                                Unit Visits, AR/VR Demonstrations
-                            </div>
-                        </td>
-                        <td>
-                            <div class="session-box special">
-                                <div class="session-title">Full Day Orientation</div>
-                                Comprehensive Smart Hospital & Lab Site Briefings<br>
+                                <div class="session-title">PM (11:00-16:30)</div>
+                                <div class="session-title">Campus Tour</div>
                                 <a href="#orientation-detail" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">(See Detailed Schedule Below)</a>
                             </div>
                         </td>
@@ -970,8 +978,8 @@
                         <td>June 22</td>
                         <td>June 23</td>
                         <td>June 24</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td>June 25</td>
+                        <td>June 26</td>
                     </tr>
                     <tr>
                         <td>
@@ -987,8 +995,8 @@
                             </div>
                         </td>
                         <td style="color: #cbd5e0; font-style: italic;">No Session</td>
-                        <td style="color: #cbd5e0; font-style: italic;">-</td>
-                        <td style="color: #cbd5e0; font-style: italic;">-</td>
+                        <td style="color: #cbd5e0; font-style: italic;">No Session</td>
+                        <td style="color: #cbd5e0; font-style: italic;">No Session</td>
                     </tr>
                 </tbody>
             </table>
@@ -1072,9 +1080,9 @@
                         </td>
                         <td data-label="Venue"><span class="venue-tag">Blood Drawing Area, 2F, Rear Outpatient Building</span></td>
                     </tr>
-                    <tr>
+                    <tr class="lunch-row">
                         <td data-label="Time">12:00 - 13:30</td>
-                        <td data-label="Topic">Lunch, Networking & Soft Background Music Video Screening</td>
+                        <td data-label="Topic">Lunch</td>
                         <td data-label="Venue"><span class="venue-tag">The 9th Conference Room, 7F, Emergency Building</span></td>
                     </tr>
                     <tr>
