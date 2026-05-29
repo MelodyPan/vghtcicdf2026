@@ -75,6 +75,14 @@
             font-weight: 500;
             transition: opacity 0.3s, border-bottom 0.2s;
             padding-bottom: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-icon {
+            font-size: 0.95em;
+            line-height: 1;
         }
 
         nav a:hover {
@@ -643,6 +651,85 @@
             color: #64748b;
         }
 
+        .survey-list {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .survey-item {
+            border: 1px solid #dbe7ee;
+            border-radius: 8px;
+            padding: 14px;
+            background: #ffffff;
+        }
+
+        .survey-item h3 {
+            font-size: 1.02rem;
+            color: #0f766e;
+            margin-bottom: 6px;
+        }
+
+        .survey-item p {
+            font-size: 0.93rem;
+            color: #475569;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .survey-session-select {
+            width: 100%;
+            margin-bottom: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.92rem;
+            color: #0f172a;
+            background: #ffffff;
+        }
+
+        .survey-btn.is-disabled {
+            background: #94a3b8;
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+
+        .survey-qr {
+            margin: 10px 0 12px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .survey-qr img {
+            width: 116px;
+            height: 116px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: #ffffff;
+            object-fit: contain;
+        }
+
+        .survey-qr-note {
+            margin-top: 6px;
+            font-size: 0.84rem;
+            color: #64748b;
+        }
+
+        .survey-qr-link-disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .survey-qr-link-disabled .social-qr-callout {
+            background: #64748b;
+        }
+
+        .survey-qr-link-disabled .social-qr-cta {
+            color: #64748b;
+            border-color: #64748b;
+        }
+
         /* Footer layout */
         .footer-info {
             display: grid;
@@ -821,6 +908,7 @@
             .security-reminder li { font-size: 1rem; }
             .survey-box { padding: 16px; }
             .survey-box p { font-size: 0.96rem; }
+            .survey-list { grid-template-columns: 1fr; }
             .social-qr-grid { grid-template-columns: 1fr; }
             .social-qr-item img { width: 120px; height: 120px; }
             
@@ -853,12 +941,12 @@
             </div>
             <nav>
                 <!-- <a href="#about">About</a> -->
-                <a href="#schedule">Full Schedule</a>
-                <a href="#highlight">Campus Tour</a>
-                <a href="#network">Network</a>
-                <a href="#survey">Survey</a>
-                <a href="#location">Location</a>
-                <a href="#contact">Contact Us</a>
+                <a href="#schedule"><span class="nav-icon" aria-hidden="true">📅</span>Full Schedule</a>
+                <a href="#highlight"><span class="nav-icon" aria-hidden="true">🏥</span>Campus Tour</a>
+                <a href="#network"><span class="nav-icon" aria-hidden="true">📶</span>Network</a>
+                <a href="#survey"><span class="nav-icon" aria-hidden="true">📝</span>Survey</a>
+                <a href="#location"><span class="nav-icon" aria-hidden="true">📍</span>Location</a>
+                <a href="#contact"><span class="nav-icon" aria-hidden="true">☎️</span>Contact Us</a>
             </nav>
         </div>
     </header>
@@ -1314,11 +1402,39 @@ Focusing on patient-centered and evidence-based teaching, we provide continuous 
             <h2>Satisfaction Survey</h2>
             <div class="survey-box">
                 <p>
-                    Your feedback is very important to us. Please complete the participant satisfaction questionnaire
-                    before the end of the program. Thank you for helping us improve future training activities.
+                    Your feedback is very important to us. Please complete the questionnaire that matches your session.
+                    Thank you for helping us improve future training activities.
                 </p>
-                <div class="survey-actions">
-                    <a class="survey-btn" href="https://forms.gle/VPDJGmXtqtgSYFnu8" target="_blank" rel="noopener noreferrer">Fill Out the Survey</a>
+
+                <div class="survey-list">
+                    <article class="survey-item">
+                        <h3>June 5 Keynote Speeches / Campus Tour</h3>
+                        <div class="survey-qr">
+                            <a class="social-qr-link" href="https://forms.gle/VPDJGmXtqtgSYFnu8" target="_blank" rel="noopener noreferrer" aria-label="Open Survey A form">
+                                <span class="social-qr-callout">Clickable Link</span>
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fforms.gle%2FVPDJGmXtqtgSYFnu8" alt="QR code for Survey A (June 5)">
+                                <p>Scan or click to open Survey</p>
+                                <span class="social-qr-cta">Click to Open</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="survey-item">
+                        <h3>Course Sessions</h3>
+                        <select id="survey-session-select" class="survey-session-select" aria-label="Select a course session for survey">
+                            <option value="">Select a course session...</option>
+                            <option value="session-june-8-12">June 8-12: Core Lecture Sessions</option>
+                            <option value="session-june-15-18">June 15-18: Hands-on Workshop</option>
+                        </select>
+                        <div class="survey-qr">
+                            <a id="survey-session-link" class="social-qr-link survey-qr-link-disabled" href="#" aria-label="Course session survey link" aria-disabled="true">
+                                <span id="survey-session-callout" class="social-qr-callout">Coming Soon</span>
+                                <img id="survey-session-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=Survey%20B%20link%20to%20be%20updated" alt="QR placeholder for course session survey">
+                                <p id="survey-session-text">Select a course session to view its QR code</p>
+                                <span id="survey-session-cta" class="social-qr-cta">Pending Link</span>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -1384,35 +1500,90 @@ Focusing on patient-centered and evidence-based teaching, we provide continuous 
             var lightboxImg = document.getElementById('image-lightbox-img');
             var closeBtn = document.getElementById('image-lightbox-close');
 
-            if (!staticMapLink || !lightbox || !lightboxImg || !closeBtn) {
-                return;
-            }
-
             function closeLightbox() {
                 lightbox.classList.remove('open');
                 lightbox.setAttribute('aria-hidden', 'true');
             }
 
-            staticMapLink.addEventListener('click', function (event) {
-                event.preventDefault();
-                lightboxImg.src = staticMapLink.getAttribute('href');
-                lightbox.classList.add('open');
-                lightbox.setAttribute('aria-hidden', 'false');
-            });
+            if (staticMapLink && lightbox && lightboxImg && closeBtn) {
+                staticMapLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    lightboxImg.src = staticMapLink.getAttribute('href');
+                    lightbox.classList.add('open');
+                    lightbox.setAttribute('aria-hidden', 'false');
+                });
 
-            closeBtn.addEventListener('click', closeLightbox);
+                closeBtn.addEventListener('click', closeLightbox);
 
-            lightbox.addEventListener('click', function (event) {
-                if (event.target === lightbox) {
-                    closeLightbox();
-                }
-            });
+                lightbox.addEventListener('click', function (event) {
+                    if (event.target === lightbox) {
+                        closeLightbox();
+                    }
+                });
+            }
 
             document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+                if (event.key === 'Escape' && lightbox && lightbox.classList.contains('open')) {
                     closeLightbox();
                 }
             });
+
+            var surveySessionSelect = document.getElementById('survey-session-select');
+            var surveySessionLink = document.getElementById('survey-session-link');
+            var surveySessionQr = document.getElementById('survey-session-qr');
+            var surveySessionText = document.getElementById('survey-session-text');
+            var surveySessionCallout = document.getElementById('survey-session-callout');
+            var surveySessionCta = document.getElementById('survey-session-cta');
+
+            var sessionSurveyLinks = {
+                'session-june-8-12': '',
+                'session-june-15-18': '',
+                'session-june-22-23': ''
+            };
+
+            function toQr(link) {
+                return 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(link);
+            }
+
+            function setPending(text) {
+                surveySessionLink.classList.add('survey-qr-link-disabled');
+                surveySessionLink.setAttribute('aria-disabled', 'true');
+                surveySessionLink.setAttribute('href', '#');
+                surveySessionCallout.textContent = 'Coming Soon';
+                surveySessionText.textContent = text;
+                surveySessionCta.textContent = 'Pending Link';
+            }
+
+            function setReady(link) {
+                surveySessionLink.classList.remove('survey-qr-link-disabled');
+                surveySessionLink.removeAttribute('aria-disabled');
+                surveySessionLink.setAttribute('href', link);
+                surveySessionCallout.textContent = 'Clickable Link';
+                surveySessionText.textContent = 'Scan or click to open selected session survey';
+                surveySessionCta.textContent = 'Click to Open';
+            }
+
+            if (surveySessionSelect && surveySessionLink && surveySessionQr && surveySessionText && surveySessionCallout && surveySessionCta) {
+                surveySessionSelect.addEventListener('change', function () {
+                    var key = surveySessionSelect.value;
+                    var link = sessionSurveyLinks[key];
+
+                    if (!key) {
+                        surveySessionQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=Survey%20B%20link%20to%20be%20updated';
+                        setPending('Select a course session to view its QR code');
+                        return;
+                    }
+
+                    if (!link) {
+                        surveySessionQr.src = toQr('Survey link pending for ' + surveySessionSelect.options[surveySessionSelect.selectedIndex].text);
+                        setPending('Selected session link is not available yet');
+                        return;
+                    }
+
+                    surveySessionQr.src = toQr(link);
+                    setReady(link);
+                });
+            }
         })();
     </script>
 
