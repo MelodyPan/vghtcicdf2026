@@ -734,6 +734,91 @@
             border-color: #64748b;
         }
 
+        /* Downloads section */
+        .downloads-box {
+            border: 1px solid #dbe7ee;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 10px;
+            background: linear-gradient(180deg, #f7fcfc 0%, #ffffff 100%);
+            padding: 22px 24px;
+        }
+
+        .downloads-box p {
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .download-item {
+            border: 1px solid #dbe7ee;
+            border-radius: 10px;
+            padding: 14px;
+            background: #ffffff;
+        }
+
+        .download-item h3 {
+            font-size: 1.02rem;
+            color: #0f766e;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .download-item p {
+            font-size: 0.92rem;
+            color: #475569;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .download-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .download-link:hover {
+            background: #006f6b;
+            transform: translateY(-1px);
+        }
+
+        .download-link.is-disabled {
+            background: #94a3b8;
+            pointer-events: none;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .download-status {
+            margin-top: 8px;
+            margin-bottom: 0;
+            font-size: 0.84rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .download-status.is-ready {
+            color: #0f766e;
+        }
+
+        .download-note {
+            margin-top: 12px;
+            font-size: 0.88rem;
+            color: #64748b;
+        }
+
         /* Footer layout */
         .footer-info {
             display: grid;
@@ -1095,6 +1180,18 @@
                 grid-template-columns: 1fr;
             }
 
+            .downloads-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .downloads-box {
+                padding: 16px;
+            }
+
+            .download-item {
+                border-radius: 10px;
+            }
+
             .social-qr-grid {
                 grid-template-columns: 1fr;
             }
@@ -1183,6 +1280,11 @@
             h2 {
                 font-size: 1.48rem;
             }
+
+            .download-link {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -1202,6 +1304,7 @@
                 <a href="#highlight"><span class="nav-icon" aria-hidden="true">🏥</span>Campus Tour</a>
                 <!-- <a href="#network"><span class="nav-icon" aria-hidden="true">📶</span>Network</a> -->
                 <a href="#survey"><span class="nav-icon" aria-hidden="true">📝</span>Survey</a>
+                <a href="#downloads"><span class="nav-icon" aria-hidden="true">📥</span>Downloads</a>
                 <a href="#location"><span class="nav-icon" aria-hidden="true">📍</span>Location</a>
                 <a href="#contact"><span class="nav-icon" aria-hidden="true">☎️</span>Contact Us</a>
             </nav>
@@ -1392,7 +1495,7 @@
                             style="text-align: center; background: #fffdf5; vertical-align: middle; padding: 20px;">
                             <strong style="color: #b7791f; font-size: 1rem;">🧠 AI Medical Imaging Hands-on Workshop /
                                 Practical Implementation Course</strong><br>
-                            Daily Schedule: Morning Session 09:30~12:30 | Afternoon Session 13:30~16:30
+                            Daily Schedule: Morning Session 09:00~12:00 | Afternoon Session 13:30~16:30
                         </td>
                         <td
                             style="background: #fff5f5; text-align: center; color: #e53e3e; vertical-align: middle; font-weight: bold;">
@@ -1748,6 +1851,31 @@
             </div>
         </section>
 
+        <section id="downloads">
+            <h2>Downloads</h2>
+            <div class="downloads-box">
+                <div class="downloads-grid">
+                    <article class="download-item">
+                        <h3>Program Schedule (PDF)</h3>
+                        <p>Complete timeline and session arrangements for June 4-23, 2026.</p>
+                        <a class="download-link is-disabled js-download-link" href="assets/downloads/program-schedule.pdf"
+                            data-file="assets/downloads/program-schedule.pdf" aria-disabled="true" download>
+                            Coming Soon
+                        </a>
+                    </article>
+
+                    <article class="download-item">
+                        <h3>Speaker Profiles (PDF)</h3>
+                        <p>Brief introductions and background information of invited speakers.</p>
+                        <a class="download-link is-disabled js-download-link" href="assets/downloads/speaker-profiles.pdf"
+                            data-file="assets/downloads/speaker-profiles.pdf" aria-disabled="true" download>
+                            Coming Soon
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <div class="footer-section" id="contact">
             <h2>Contact Information</h2>
             <div class="footer-info" style="margin-top: 20px;">
@@ -1901,6 +2029,64 @@
                     setReady(link);
                 });
             }
+
+            function setDownloadPending(linkEl, statusEl) {
+                linkEl.classList.add('is-disabled');
+                linkEl.setAttribute('aria-disabled', 'true');
+                linkEl.textContent = 'Coming Soon';
+                if (statusEl) {
+                    statusEl.classList.remove('is-ready');
+                    statusEl.textContent = 'Coming Soon';
+                }
+            }
+
+            function setDownloadReady(linkEl, statusEl) {
+                linkEl.classList.remove('is-disabled');
+                linkEl.removeAttribute('aria-disabled');
+                linkEl.textContent = 'Download PDF';
+                if (statusEl) {
+                    statusEl.classList.add('is-ready');
+                    statusEl.textContent = 'Available for download';
+                }
+            }
+
+            function checkFileExists(url) {
+                return fetch(url, { method: 'HEAD', cache: 'no-store' })
+                    .then(function (response) {
+                        if (response.ok) {
+                            return true;
+                        }
+                        return false;
+                    })
+                    .catch(function () {
+                        return false;
+                    });
+            }
+
+            function initDownloadAvailability() {
+                var links = document.querySelectorAll('.js-download-link');
+
+                links.forEach(function (linkEl) {
+                    var filePath = linkEl.getAttribute('data-file') || linkEl.getAttribute('href');
+                    var statusEl = linkEl.parentElement ? linkEl.parentElement.querySelector('.js-download-status') : null;
+
+                    setDownloadPending(linkEl, statusEl);
+
+                    if (!filePath) {
+                        return;
+                    }
+
+                    checkFileExists(filePath).then(function (exists) {
+                        if (exists) {
+                            setDownloadReady(linkEl, statusEl);
+                        } else {
+                            setDownloadPending(linkEl, statusEl);
+                        }
+                    });
+                });
+            }
+
+            initDownloadAvailability();
         })();
     </script>
 
