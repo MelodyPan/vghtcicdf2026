@@ -83,8 +83,23 @@
         }
 
         .nav-icon {
-            font-size: 0.95em;
+            font-size: 0.88em;
             line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 999px;
+            background: #fff4f8;
+            border: 1px solid #fbcfe8;
+            box-shadow: 0 2px 4px rgba(244, 114, 182, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        nav a:hover .nav-icon {
+            transform: translateY(-1px) scale(1.08) rotate(-8deg);
+            background: #ffe4ef;
         }
 
         nav a:hover {
@@ -977,7 +992,7 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 118px;
+                padding-top: 148px;
                 background: linear-gradient(180deg, #eff6f9 0%, #f7fafc 160px, #f4f8fb 100%);
             }
 
@@ -1010,28 +1025,17 @@
             }
 
             .logo img {
-                height: 32px;
+                height: 42px;
             }
 
             nav {
                 margin-top: 0;
                 display: flex;
-                flex-wrap: nowrap;
-                justify-content: flex-start;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 8px;
-                overflow-x: auto;
-                padding: 2px 2px 6px;
-                scrollbar-width: thin;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            nav::-webkit-scrollbar {
-                height: 6px;
-            }
-
-            nav::-webkit-scrollbar-thumb {
-                background: #99f6e4;
-                border-radius: 999px;
+                overflow-x: visible;
+                padding: 2px 0 4px;
             }
 
             nav a {
@@ -1265,7 +1269,7 @@
 
         @media (max-width: 390px) {
             body {
-                padding-top: 112px;
+                padding-top: 146px;
             }
 
             .container {
@@ -1322,13 +1326,13 @@
             </div>
             <nav>
                 <!-- <a href="#about">About</a> -->
-                <a href="#schedule"><span class="nav-icon" aria-hidden="true">📅</span>Full Schedule</a>
+                <a href="#schedule"><span class="nav-icon" aria-hidden="true">🗓️</span>Full Schedule</a>
                 <a href="#highlight"><span class="nav-icon" aria-hidden="true">🏥</span>Campus Tour</a>
                 <!-- <a href="#network"><span class="nav-icon" aria-hidden="true">📶</span>Network</a> -->
                 <a href="#survey"><span class="nav-icon" aria-hidden="true">📝</span>Survey</a>
                 <a href="#downloads"><span class="nav-icon" aria-hidden="true">📥</span>Downloads</a>
                 <a href="#location"><span class="nav-icon" aria-hidden="true">📍</span>Location</a>
-                <a href="#contact"><span class="nav-icon" aria-hidden="true">☎️</span>Contact Us</a>
+                <a href="#contact"><span class="nav-icon" aria-hidden="true">📞</span>Contact Us</a>
             </nav>
         </div>
     </header>
@@ -1696,9 +1700,24 @@
                     </figure>
                     <div class="highlight-location">Venue：2F, Emergency Building</div>
                     <p>
-                        Taichung Veterans General Hospital established the largest Telehealth Center in Taiwan to
-                        integrate telecare resources, support real-time remote care, and enhance home-based and
-                        post-discharge services—improving medical quality and promoting international healthcare.
+                        Taichung Veterans General Hospital proudly presents Taiwan's largest and most integrated Fully
+                        Automated Smart Laboratory. Equipped with the world's latest Computer-Aided Robotic System
+                        (CARS), a fully electric and contact-free specimen transportation system, the laboratory
+                        provides a low-noise, zero-emission, and highly safe operating environment while supporting
+                        sustainable healthcare development.
+                    </p>
+                    <p>
+                        The smart laboratory seamlessly integrates clinical chemistry, immunology, hematology, and
+                        coagulation testing into a unified automated workflow. With the capacity to process more than
+                        10,000 specimens daily, it delivers exceptional efficiency, accuracy, and reliability. Automated
+                        specimen handling and tube consolidation reduce infectious waste by up to 50%, supporting the
+                        hospital's low-carbon and environmental sustainability initiatives.
+                    </p>
+                    <p>
+                        Through real-time monitoring and data integration at the Smart Monitoring Center, clinicians can
+                        access critical laboratory information more rapidly, enabling timely clinical decision-making
+                        and enhanced infection control. This innovative facility sets a new benchmark for smart, safe,
+                        efficient, and sustainable laboratory services.
                     </p>
                 </article>
 
@@ -1880,7 +1899,8 @@
                     <article class="download-item">
                         <h3>Program Schedule (PDF)</h3>
                         <p>Complete timeline and session arrangements for June 4-23, 2026.</p>
-                        <a class="download-link is-disabled js-download-link" href="assets/downloads/program-schedule.pdf"
+                        <a class="download-link is-disabled js-download-link"
+                            href="assets/downloads/program-schedule.pdf"
                             data-file="assets/downloads/program-schedule.pdf" aria-disabled="true" download>
                             Coming Soon
                         </a>
@@ -1889,7 +1909,8 @@
                     <article class="download-item">
                         <h3>Speaker Profiles (PDF)</h3>
                         <p>Brief introductions and background information of invited speakers.</p>
-                        <a class="download-link is-disabled js-download-link" href="assets/downloads/speaker-profiles.pdf"
+                        <a class="download-link is-disabled js-download-link"
+                            href="assets/downloads/speaker-profiles.pdf"
                             data-file="assets/downloads/speaker-profiles.pdf" aria-disabled="true" download>
                             Coming Soon
                         </a>
