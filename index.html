@@ -300,6 +300,12 @@
             background-color: #fcfdfe;
         }
 
+        #orientation-info-system,
+        #orientation-regulatory-samd,
+        #orientation-ai-governance {
+            scroll-margin-top: 110px;
+        }
+
         .agenda-table tr.lunch-row,
         .agenda-table tr.lunch-row td {
             background-color: #ffe4ef;
@@ -820,6 +826,7 @@
             border-radius: 10px;
             padding: 14px;
             background: #ffffff;
+            scroll-margin-top: 110px;
         }
 
         .download-item h3 {
@@ -834,6 +841,42 @@
             color: #475569;
             margin-bottom: 10px;
             line-height: 1.6;
+        }
+
+        .orientation-download-link {
+            color: #b45309;
+            text-decoration: none;
+            border-bottom: 2px solid #f59e0b;
+        }
+
+        .orientation-download-link:hover {
+            color: #92400e;
+            border-bottom-color: #d97706;
+        }
+
+        .orientation-download-icon {
+            display: inline-block;
+            margin-left: 6px;
+            color: #b45309;
+            text-decoration: none;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            border: 1px solid #f59e0b;
+            border-radius: 999px;
+            padding: 1px 7px;
+            background: #fff7ed;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+        .orientation-download-icon:hover {
+            color: #92400e;
+        }
+
+        .download-item:target {
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);
         }
 
         .download-link {
@@ -851,6 +894,26 @@
         .download-link:hover {
             background: #006f6b;
             transform: translateY(-1px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            text-decoration: none;
+            border: 1px solid #f59e0b;
+            border-radius: 999px;
+            padding: 2px 8px;
+            background: #fff7ed;
+            line-height: 1;
+        }
+
+        .back-link:hover {
+            color: #7c2d12;
+            border-color: #d97706;
         }
 
         .download-link.is-disabled {
@@ -1394,7 +1457,10 @@
         </section> -->
 
         <section id="schedule">
-            <h2>Full Schedule (June 2026)</h2>
+            <h2>Full Schedule (June 2026)
+                <a href="#download-program-schedule" class="orientation-download-icon"
+                    aria-label="Go to Program Schedule download" title="Go to download section">PDF</a>
+            </h2>
             <p style="font-size: 0.9rem; color: var(--gray-color); margin-bottom: 15px;">
                 * Note: The program runs weekly from Monday to Friday. June 19 is a national holiday (Dragon Boat
                 Festival).
@@ -1626,10 +1692,16 @@
                         <td data-label="Venue"><span class="venue-tag">The 9th Conference Room, 7F, Emergency
                                 Building</span></td>
                     </tr>
-                    <tr>
+                    <tr id="orientation-info-system">
                         <td data-label="Time">09:40 - 10:00</td>
                         <td data-label="Topic">
-                            <strong>Information System of Smart Hospital</strong>
+                            <strong>
+                                <a href="#download-info-system-slide" class="orientation-download-link">
+                                    Information System of Smart Hospital
+                                </a>
+                                <a href="#download-info-system-slide" class="orientation-download-icon"
+                                    aria-label="Go to download section for Information System of Smart Hospital" title="Go to download section">PDF</a>
+                            </strong>
                             <div style="font-size:0.85rem; color:#555; margin-top:4px;">
                                 Briefing by Dr. Sheng-Yang Huang (Acting Director of Computer & Communications Center)
                             </div>
@@ -1637,10 +1709,16 @@
                         <td data-label="Venue"><span class="venue-tag">The 9th Conference Room, 7F, Emergency
                                 Building</span></td>
                     </tr>
-                    <tr>
+                    <tr id="orientation-regulatory-samd">
                         <td data-label="Time">10:00 - 10:30</td>
                         <td data-label="Topic">
-                            <strong>Regulatory Clearance for SaMD (Software as a Medical Device)</strong>
+                            <strong>
+                                <a href="#download-regulatory-samd-slide" class="orientation-download-link">
+                                    Regulatory Clearance for SaMD (Software as a Medical Device)
+                                </a>
+                                <a href="#download-regulatory-samd-slide" class="orientation-download-icon"
+                                    aria-label="Go to download section for Regulatory Clearance for SaMD" title="Go to download section">PDF</a>
+                            </strong>
                             <div style="font-size:0.85rem; color:#555; margin-top:4px;">
                                 Speaker: Dr. Wen-Cheng Chao (Chief, Department of Critical Care Medicine)
                             </div>
@@ -1648,10 +1726,16 @@
                         <td data-label="Venue"><span class="venue-tag">The 9th Conference Room, 7F, Emergency
                                 Building</span></td>
                     </tr>
-                    <tr>
+                    <tr id="orientation-ai-governance">
                         <td data-label="Time">10:30 - 10:50</td>
                         <td data-label="Topic">
-                            <strong>AI Governance Strategy</strong>
+                            <strong>
+                                <a href="#download-ai-governance-slide" class="orientation-download-link">
+                                    AI Governance Strategy
+                                </a>
+                                <a href="#download-ai-governance-slide" class="orientation-download-icon"
+                                    aria-label="Go to download section for AI Governance Strategy" title="Go to download section">PDF</a>
+                            </strong>
                             <div style="font-size:0.85rem; color:#555; margin-top:4px;">
                                 Speaker: Dr. Sheng-Yang Huang (Acting Director of Computer & Communications Center)
                             </div>
@@ -1968,15 +2052,46 @@
             <h2>Downloads</h2>
             <div class="downloads-box">
                 <div class="downloads-grid">
-                    <article class="download-item">
-                        <h3>Program Schedule (PDF)</h3>
+                    <article class="download-item" id="download-program-schedule">
+                        <h3>Full Schedule (PDF)</h3>
                         <p>Complete timeline and session arrangements for June 4-23, 2026.</p>
                         <a class="download-link" href="assets/downloads/schedule.pdf" target="_blank" download>
                             Download PDF
                         </a>
                     </article>
 
-                    <article class="download-item">
+                    <article class="download-item" id="download-info-system-slide">
+                        <h3>June 5 Speech Slides: Information System of Smart Hospital (PDF)</h3>
+                        <p>Briefing slides for Information System of Smart Hospital session on June 5.</p>
+                        <a class="download-link"
+                            href="assets/downloads/20260605%20Information%20System%20of%20Smart%20Hospital(Taichung%20Veterans%20General%20Hospital).pdf"
+                            target="_blank" download>
+                            Download PDF
+                        </a>
+                        <a class="back-link" href="#orientation-info-system">Back</a>
+                    </article>
+
+                    <article class="download-item" id="download-ai-governance-slide">
+                        <h3>June 5 Speech Slides: AI Governance (PDF)</h3>
+                        <p>Presentation slides for the AI Governance Strategy talk on June 5.</p>
+                        <a class="download-link" href="assets/downloads/20260605%20AI%20Governance.pdf"
+                            target="_blank" download>
+                            Download PDF
+                        </a>
+                        <a class="back-link" href="#orientation-ai-governance">Back</a>
+                    </article>
+
+                    <article class="download-item" id="download-regulatory-samd-slide">
+                        <h3>June 5 Speech Slides: Regulatory Clearance for SaMD (PDF)</h3>
+                        <p>Presentation slides covering regulatory clearance for software as a medical device.</p>
+                        <a class="download-link" href="assets/downloads/20260605_Regulatory%20Clearance%20for%20SaMD.pdf"
+                            target="_blank" download>
+                            Download PDF
+                        </a>
+                        <a class="back-link" href="#orientation-regulatory-samd">Back</a>
+                    </article>
+
+                    <!-- <article class="download-item">
                         <h3>Speaker Profiles (PDF)</h3>
                         <p>Brief introductions and background information of invited speakers.</p>
                         <a class="download-link is-disabled js-download-link"
@@ -1984,7 +2099,7 @@
                             data-file="assets/downloads/speaker-profiles.pdf" aria-disabled="true" download>
                             Coming Soon
                         </a>
-                    </article>
+                    </article> -->
                 </div>
 
                 <p class="survey-notice">
