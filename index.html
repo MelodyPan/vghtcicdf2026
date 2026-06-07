@@ -367,6 +367,88 @@
             line-height: 1.4;
         }
 
+        .speaker-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .speakers-box {
+            border: 1px solid #dbe7ee;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 10px;
+            background: linear-gradient(180deg, #f7fcfc 0%, #ffffff 100%);
+            padding: 22px 24px;
+        }
+
+        .speakers-intro {
+            color: #334155;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+
+        .speaker-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #dbe7ee;
+            border-radius: 10px;
+            background: #ffffff;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+        }
+
+        .speaker-photo {
+            display: block;
+            width: 66px;
+            height: 66px;
+            min-width: 66px;
+            border-radius: 999px;
+            border: 1px solid #cbd5e1;
+            object-fit: cover;
+            background: #f8fafc;
+        }
+
+        .speaker-content {
+            padding: 0;
+        }
+
+        .speaker-content h3 {
+            color: #1f2937;
+            font-size: 1.08rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.25;
+            letter-spacing: 0.1px;
+            word-break: keep-all;
+            overflow-wrap: anywhere;
+        }
+
+        .speaker-content p {
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .speaker-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #0f766e;
+            border: 1px solid #0f766e;
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .speaker-link:hover {
+            color: #ffffff;
+            background: #0f766e;
+        }
+
         /* Smart Highlights cards */
         .highlight-grid {
             display: grid;
@@ -1218,6 +1300,14 @@
                 gap: 14px;
             }
 
+            .speaker-content h3 {
+                font-size: 1rem;
+            }
+
+            .speaker-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .highlight-card {
                 padding: 18px 16px;
                 border-radius: 10px;
@@ -1309,6 +1399,10 @@
             }
 
             .downloads-box {
+                padding: 16px;
+            }
+
+            .speakers-box {
                 padding: 16px;
             }
 
@@ -1409,6 +1503,10 @@
                 width: 100%;
                 text-align: center;
             }
+
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1427,6 +1525,7 @@
             <nav>
                 <!-- <a href="#about">About</a> -->
                 <a href="#schedule"><span class="nav-icon" aria-hidden="true">🗓️</span>Full Schedule</a>
+                <a href="#speakers"><span class="nav-icon" aria-hidden="true">🎤</span>Speakers</a>
                 <a href="#highlight"><span class="nav-icon" aria-hidden="true">🏥</span>Campus Tour</a>
                 <!-- <a href="#network"><span class="nav-icon" aria-hidden="true">📶</span>Network</a> -->
                 <a href="#survey"><span class="nav-icon" aria-hidden="true">📝</span>Survey</a>
@@ -1818,6 +1917,68 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <section id="speakers">
+            <h2>Featured Speakers</h2>
+            <div class="speakers-box">
+                <p class="speakers-intro">Meet the invited speakers and visit their professional profiles.</p>
+                <div class="speaker-grid">
+                    <article class="speaker-card">
+                        <img class="speaker-photo" src="assets/speakers/Chao-Tung%20Yang.jpg"
+                            alt="Chao-Tung Yang portrait" loading="lazy">
+                        <div class="speaker-content">
+                            <h3>Prof. Chao-Tung Yang</h3>
+                            <p>Lifetime Distinguished Professor, Tunghai University</p>
+                            <a class="speaker-link" href="https://hpc.thu.edu.tw/profile/en.php" target="_blank"
+                                rel="noopener noreferrer">View Profile</a>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <img class="speaker-photo" src="assets/speakers/James%20Lee.jfif" alt="James Lee portrait"
+                            loading="lazy">
+                        <div class="speaker-content">
+                            <h3>James Lee</h3>
+                            <p>CTO &amp; Vice President</p>
+                            <a class="speaker-link" href="https://www.linkedin.com/in/james-lee-2b8aa49" target="_blank"
+                                rel="noopener noreferrer">View Profile</a>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <img class="speaker-photo" src="assets/speakers/Chun-Rong%20Huang.PNG" alt="Chun-Rong Huang portrait"
+                            loading="lazy">
+                        <div class="speaker-content">
+                            <h3>Chun-Rong Huang</h3>
+                            <p>Professor, Department of Computer Science and Information Engineering, National Yang Ming
+                                Chiao Tung University</p>
+                            <a class="speaker-link" href="http://cvml.cs.nycu.edu.tw/biography.html" target="_blank"
+                                rel="noopener noreferrer">View Profile</a>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <img class="speaker-photo" src="assets/speakers/Amy%20Hsiao.PNG" alt="Amy Hsiao portrait"
+                            loading="lazy">
+                        <div class="speaker-content">
+                            <h3>Amy Hsiao</h3>
+                            <p>Senior Manager, Acer Smart Medical</p>
+                            <a class="speaker-link" href="https://www.linkedin.com/in/amy-y-hsiao/" target="_blank"
+                                rel="noopener noreferrer">View Profile</a>
+                        </div>
+                    </article>
+
+                    <article class="speaker-card">
+                        <img class="speaker-photo" src="assets/speakers/Horng-Shing%20Lu.PNG"
+                            alt="Horng-Shing Lu portrait" loading="lazy">
+                        <div class="speaker-content">
+                            <h3>Prof. Horng-Shing Lu</h3>
+                            <p>Deputy Superintendent, Kaohsiung Medical University Hospital</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
         <section id="highlight">
