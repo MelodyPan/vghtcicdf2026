@@ -2189,8 +2189,12 @@
                         <h3>Course Sessions</h3>
                         <select id="survey-session-select" class="survey-session-select"
                             aria-label="Select a course session for survey">
-                            <option value="">Select a course session...</option>
-                            <option value="session-june-8-12">June 8-12: Course Sessions</option>
+                            <option value="">Select a course date...</option>
+                            <option value="session-june-8">June 8 Course Session</option>
+                            <option value="session-june-9">June 9 Course Session</option>
+                            <option value="session-june-10">June 10 Course Session</option>
+                            <option value="session-june-11">June 11 Course Session</option>
+                            <option value="session-june-12">June 12 Course Session</option>
                             <option value="session-june-15-18">June 15-18: Hands-on Workshop</option>
                         </select>
                         <div class="survey-qr">
@@ -2377,9 +2381,12 @@
             var surveySessionCta = document.getElementById('survey-session-cta');
 
             var sessionSurveyLinks = {
-                'session-june-8-12': '',
-                'session-june-15-18': '',
-                'session-june-22-23': ''
+                'session-june-8': 'https://forms.gle/mRyBL1JVRQgtqAVD6',
+                'session-june-9': '',
+                'session-june-10': '',
+                'session-june-11': '',
+                'session-june-12': '',
+                'session-june-15-18': ''
             };
 
             function toQr(link) {
@@ -2390,6 +2397,8 @@
                 surveySessionLink.classList.add('survey-qr-link-disabled');
                 surveySessionLink.setAttribute('aria-disabled', 'true');
                 surveySessionLink.setAttribute('href', '#');
+                surveySessionLink.removeAttribute('target');
+                surveySessionLink.removeAttribute('rel');
                 surveySessionCallout.textContent = 'Coming Soon';
                 surveySessionText.textContent = text;
                 surveySessionCta.textContent = 'Pending Link';
@@ -2399,6 +2408,8 @@
                 surveySessionLink.classList.remove('survey-qr-link-disabled');
                 surveySessionLink.removeAttribute('aria-disabled');
                 surveySessionLink.setAttribute('href', link);
+                surveySessionLink.setAttribute('target', '_blank');
+                surveySessionLink.setAttribute('rel', 'noopener noreferrer');
                 surveySessionCallout.textContent = 'Clickable Link';
                 surveySessionText.textContent = 'Scan or click to open selected session survey';
                 surveySessionCta.textContent = 'Click to Open';
@@ -2424,6 +2435,17 @@
                     surveySessionQr.src = toQr(link);
                     setReady(link);
                 });
+
+                var today = new Date();
+                var isJuneCourseWindow = today.getMonth() === 5 && today.getDate() >= 8 && today.getDate() <= 12;
+
+                if (isJuneCourseWindow) {
+                    var todayKey = 'session-june-' + today.getDate();
+                    if (surveySessionSelect.querySelector('option[value="' + todayKey + '"]')) {
+                        surveySessionSelect.value = todayKey;
+                        surveySessionSelect.dispatchEvent(new Event('change'));
+                    }
+                }
             }
 
             function setDownloadPending(linkEl, statusEl) {
