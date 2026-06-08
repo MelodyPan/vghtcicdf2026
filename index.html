@@ -89,10 +89,19 @@
             width: auto;
         }
 
+        nav {
+            display: grid;
+            grid-template-columns: repeat(4, max-content);
+            column-gap: 14px;
+            row-gap: 8px;
+            justify-content: end;
+            align-items: center;
+        }
+
         nav a {
             color: #0f766e;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 0;
             font-size: 0.95rem;
             font-weight: 500;
             transition: opacity 0.3s, border-bottom 0.2s;
