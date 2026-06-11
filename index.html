@@ -349,6 +349,45 @@
             font-weight: 600;
         }
 
+        .workshop-venue-panel {
+            max-width: 760px;
+            margin: 0 auto 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .workshop-venue-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background: #ffffff;
+            border: 1px solid #f1f5f9;
+            margin-bottom: 0;
+            font-size: 0.74rem;
+            line-height: 1.2;
+        }
+
+        .workshop-venue-date {
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: #92400e;
+            flex: 0 0 auto;
+        }
+
+        .workshop-venue-place {
+            font-size: 0.74rem;
+            color: #475569;
+            line-height: 1.2;
+            flex: 1 1 auto;
+        }
+
         /* Participant Grid Layout */
         .participant-grid {
             display: grid;
@@ -1448,6 +1487,15 @@
                 height: 120px;
             }
 
+            .workshop-venue-row {
+                white-space: normal;
+                text-overflow: clip;
+            }
+
+            .workshop-venue-panel {
+                grid-template-columns: 1fr;
+            }
+
             .agenda-table,
             .agenda-table thead,
             .agenda-table tbody,
@@ -1786,7 +1834,14 @@
                             </div>
                             <div class="session-box lecture">
                                 <div class="session-title">13:30-16:30</div>
-                                Fundamentals and Medical Image Applications of Deep Learning<br>
+                                <a href="#download-june11-fundamentals-deep-learning-slide"
+                                    class="orientation-download-link">
+                                    Fundamentals and Medical Image Applications of Deep Learning
+                                </a>
+                                <a href="#download-june11-fundamentals-deep-learning-slide"
+                                    class="orientation-download-icon"
+                                    aria-label="Go to download section for Fundamentals and Medical Image Applications of Deep Learning"
+                                    title="Go to download section">PDF</a><br>
                                 <span class="session-speaker"><a class="session-speaker-link"
                                         href="#speaker-chun-rong-huang">Prof. Chun-Rong Huang (Department of Computer
                                         Science and
@@ -1837,7 +1892,14 @@
                     <tr>
                         <td colspan="4"
                             style="text-align: center; background: #fffdf5; vertical-align: middle; padding: 20px;">
-                            <span class="venue-tag schedule-venue">Venue: To be confirmed</span><br>
+                            <div class="workshop-venue-panel">
+                                <div class="workshop-venue-row venue-tag schedule-venue">
+                                    Venue: The Conference Room, 4F, Proton Therapy Center
+                                </div>
+                                <div class="workshop-venue-row venue-tag schedule-venue">
+                                    Venue: The 3rd Conference Room, 2F, Research Building
+                                </div>
+                            </div>
                             <strong style="color: #b7791f; font-size: 1rem;">🧠 AI Medical Imaging Hands-on Workshop /
                                 Practical Implementation Course</strong><br>
                             <span class="session-speaker">QUANTA COMPUTER INC.</span><br>
@@ -2558,6 +2620,17 @@
                         <p>Presentation slides by Dr. Chih-Sheng Lai.</p>
                         <a class="download-link"
                             href="assets/downloads/20260611_Artificial%20Intelligence%20in%20Modern%20Lymphedema%20Surgery%20From%20Diagnosis%20to%20Precision%20Navigation.pdf"
+                            target="_blank" download>
+                            Download PDF
+                        </a>
+                        <a class="back-link" href="#schedule-june-11">Back</a>
+                    </article>
+
+                    <article class="download-item" id="download-june11-fundamentals-deep-learning-slide">
+                        <h3>June 11 Speech Slides: Fundamentals and Medical Image Applications of Deep Learning</h3>
+                        <p>Presentation slides by Prof. Chun-Rong Huang.</p>
+                        <a class="download-link"
+                            href="assets/downloads/20260611_Fundamentals%20and%20Medical%20Image%20Applications%20of%20Deep%20Learning.pdf"
                             target="_blank" download>
                             Download PDF
                         </a>
